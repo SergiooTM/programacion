@@ -35,6 +35,7 @@ public class FraccionPrincipal {
 		} while (error);
 
 		do {
+			System.out.println("---- \n1.Equals \n2.Sumar \n3.Restar \n4.Multiplicar \n5.Dividir \n6.Simplificar \n7.Salir \n----");
 			System.out.println("Selecciiona una opción");
 			opcion = Integer.parseInt(teclado.nextLine());
 
@@ -45,10 +46,10 @@ public class FraccionPrincipal {
 
 	public static void menu(Fraccion fraccion1, Fraccion fraccion2, int opcion) {
 
+		Fraccion fraccion3;
+		
 		boolean error = true;
-
-		System.out.println(
-				"---- \n1.Equals \n2.Sumar \n3.Restar \n4.Multiplicar \n5.Dividir \n6.Simplificar \n7.Salir \n----");
+		int seleccion;
 
 		try {
 			switch (opcion) {
@@ -61,24 +62,34 @@ public class FraccionPrincipal {
 				error = false;
 				break;
 			case 2:
-				fraccion1.sumar(fraccion2);
-				
+				fraccion3 = fraccion1.sumar(fraccion2);
+				System.out.println(fraccion3.toString());
 				error = false;
 				break;
 			case 3:
-				fraccion1.restar(fraccion2);
+				fraccion3 = fraccion1.restar(fraccion2);
+				System.out.println(fraccion3.toString());
 				error = false;
 				break;
 			case 4:
-				fraccion1.multiplicar(fraccion2);
+				fraccion3 = fraccion1.multiplicar(fraccion2);
+				System.out.println(fraccion3.toString());
 				error = false;
 				break;
 			case 5:
-				fraccion1.dividir(fraccion2);
-				error = false;
+				fraccion3 = fraccion1.dividir(fraccion2);
+				System.out.println(fraccion3.toString());
 				break;
 			case 6:
-				fraccion1.simplificar();
+				System.out.println("Selecciona una fracción");
+				seleccion = Integer.parseInt(teclado.nextLine());
+				if (seleccion == 1) {
+					fraccion1.simplificar();
+					System.out.println(fraccion1.toString());
+				} else {
+					fraccion2.simplificar();
+					System.out.println(fraccion2.toString());
+				}
 				error = false;
 				break;
 			}
