@@ -53,19 +53,33 @@ public class FraccionPrincipal {
 		try {
 			switch (opcion) {
 			case 1:
-				fraccion1.equals(fraccion2);
+				if (fraccion1.equals(fraccion2)) {
+					System.out.println("Son iguales");
+				} else {
+					System.out.println("Son diferentes");
+				}
 				error = false;
 				break;
 			case 2:
 				fraccion1.sumar(fraccion2);
+				
+				error = false;
 				break;
 			case 3:
+				fraccion1.restar(fraccion2);
+				error = false;
 				break;
 			case 4:
+				fraccion1.multiplicar(fraccion2);
+				error = false;
 				break;
 			case 5:
+				fraccion1.dividir(fraccion2);
+				error = false;
 				break;
 			case 6:
+				fraccion1.simplificar();
+				error = false;
 				break;
 			}
 		} catch (FraccionException e) {
